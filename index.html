@@ -1,12 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Phillip Georgiev</title>
-  <link rel="icon" href="https://img.icons8.com/?size=48&id=AF2FJWsPaMoY&format=png" type="image/x-icon">
+  <link rel="icon" href="https://img.icons8.com/?size=48&id=AF2FJWsPaMoY&format=png" type="image/x-icon" />
   <style>
     body {
       margin: 0;
@@ -31,6 +29,7 @@
       gap: 0.5rem;
       z-index: 1000;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      align-items: center;
     }
 
     .sidebar a {
@@ -46,6 +45,20 @@
       background-color: #002855;
     }
 
+    .lang-switcher {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+
+    .lang-switcher img {
+      width: 24px;
+      height: 18px;
+      cursor: pointer;
+      border: 1px solid white;
+      border-radius: 4px;
+    }
+
     .section {
       background-color: #002855cc;
       color: white;
@@ -55,7 +68,6 @@
       max-width: 900px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
       margin-left: 160px;
-	  
     }
 
     .about-content {
@@ -81,18 +93,18 @@
       gap: 1rem;
     }
 
-	.gallery img {
-	 width: 200px;
-	 height: 150px;
-	 object-fit: cover;
-	 border-radius: 12px;
-	 transition: transform 0.3s ease; /* Smooth zoom animation */
-	}
+    .gallery img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
 
-	.gallery img:hover {
-	 transform: scale(1.3); /* Zoom in to 130% */
-	 z-index: 1; /* Optional: bring image to front if overlapping */
-	}
+    .gallery img:hover {
+      transform: scale(1.3);
+      z-index: 1;
+    }
 
     footer {
       background-color: #002855cc;
@@ -120,11 +132,6 @@
         margin: 0;
       }
 
-      .sidebar a {
-        padding: 0.5rem;
-        font-size: 0.9rem;
-      }
-
       .section {
         margin: 4rem 1rem 2rem 1rem;
         max-width: 100%;
@@ -149,61 +156,158 @@
   </style>
 </head>
 <body>
-
-<div class="sidebar">
-  <a href="#about">About</a>
-  <a href="#news">News</a>
-  <a href="#gallery">Gallery</a>
-  <a href="#contact">Contact</a>
-</div>
-
-<section id="about" class="section">
-  <h2>Phillip Georgiev</h2>
-  <div class="about-content">
-    <img src="https://github.com/Tanasko-Phillip/Intro-Page-PG/blob/main/Phillip%20profile%20picture%201.png?raw=true" alt="Phillip Georgiev" />
-    <div class="about-text">
-      <p>Born in 2013 in Sofia, Bulgaria, Phillip started playing tennis at an age of 4.</p>
-      <p>Between 2021 and June 2023, he was regularly training at the 
-        <a style="color: #ffffff;" href="https://maleeva.com/en/" target="_blank">Maleeva Tennis Academy</a> in Sofia, Bulgaria.
-      </p>
-      <p>Since August 2023, he trains at the  
-        <a style="color: #ffffff;" href="https://rainerbecker-tennis.de/" target="_blank">Rainer Becker Academy</a> in Heidelberg, Germany.
-      </p>
+  <div class="sidebar">
+    <div class="lang-switcher">
+      <img src="https://flagcdn.com/w40/gb.png" alt="English" onclick="setLanguage('en')" />
+      <img src="https://flagcdn.com/w40/de.png" alt="Deutsch" onclick="setLanguage('de')" />
+      <img src="https://flagcdn.com/w40/bg.png" alt="Български" onclick="setLanguage('bg')" />
     </div>
+    <a href="#about" id="nav-about">About</a>
+    <a href="#news" id="nav-news">News</a>
+    <a href="#gallery" id="nav-gallery">Gallery</a>
+    <a href="#contact" id="nav-contact">Contact</a>
   </div>
-</section>
 
-<section id="news" class="section">
-  <h2>News</h2>
-  <ul>
-    <li>June 2025 – Attended a week-long high-performance tennis camp at the Rafa Nadal Academy, Mallorca, Spain</li>
-    <li>November 2024 – Visited Masters 1000 in Paris, France</li>
-    <li>September 2024 – Visited Laver Cup Berlin, Germany</li>
-    <li>July 2024 – Visited ATP 500 in Hamburg, Germany</li>
-    <li>October 2023 – Visited ATP 500 in Basel, Switzerland</li>
-    <li>October 2022 – Visited Sofia Open in Sofia, Bulgaria</li>
-    <li>October 2018 – Visited ATP 500 in Vienna, Austria</li>
-  </ul>
-</section>
+  <section id="about" class="section">
+    <h2 id="name">Phillip Georgiev</h2>
+    <div class="about-content">
+      <img src="https://github.com/Tanasko-Phillip/Intro-Page-PG/blob/main/Phillip%20profile%20picture%201.png?raw=true" alt="Phillip Georgiev" />
+      <div class="about-text" id="about-text">
+        <!-- will be filled by JS -->
+      </div>
+    </div>
+  </section>
 
-<section id="gallery" class="section">
-  <h2>Gallery</h2>
-  <div class="gallery">
-    <img src="https://github.com/Tanasko-Phillip/Intro-Page-PG/blob/main/ATP%20Masters%201000%20Paris%202.jpeg?raw=true" alt="Paris Masters 1000" />
-	<img src="https://github.com/Tanasko-Phillip/Intro-Page-PG/blob/main/ATP%20Masters%201000%20Paris%201.jpeg?raw=true" alt="Paris Masters 1000" />
-    <img src="https://github.com/Tanasko-Phillip/Intro-Page-PG/blob/main/Laver%20Cup%201.jpeg?raw=true" alt="Laver Cup" />
-    <img src="https://github.com/Tanasko-Phillip/Intro-Page-PG/blob/main/20231028_Phillip%20ATP%20Basel%2016-9.jpg?raw=true" alt="ATP 500 Basel" />
-  </div>
-</section>
+  <section id="news" class="section">
+    <h2 id="news-title">News</h2>
+    <ul id="news-list">
+      <!-- filled by JS -->
+    </ul>
+  </section>
 
-<section id="contact" class="section">
-  <h2>Contact</h2>
-  <p>📧 <a href="mailto:tanyanedyalkova99@gmail.com" style="color: white; text-decoration: underline;">tanyanedyalkova99@gmail.com</a></p>
-</section>
+  <section id="gallery" class="section">
+    <h2 id="gallery-title">Gallery</h2>
+    <div class="gallery">
+      <img src="https://github.com/Tanasko-Phillip/Intro-Page-PG/blob/main/ATP%20Masters%201000%20Paris%202.jpeg?raw=true" alt="Paris Masters 1000" />
+      <img src="https://github.com/Tanasko-Phillip/Intro-Page-PG/blob/main/ATP%20Masters%201000%20Paris%201.jpeg?raw=true" alt="Paris Masters 1000" />
+      <img src="https://github.com/Tanasko-Phillip/Intro-Page-PG/blob/main/Laver%20Cup%201.jpeg?raw=true" alt="Laver Cup" />
+      <img src="https://github.com/Tanasko-Phillip/Intro-Page-PG/blob/main/20231028_Phillip%20ATP%20Basel%2016-9.jpg?raw=true" alt="ATP 500 Basel" />
+    </div>
+  </section>
 
-<footer>
-  &copy; 2025 Phillip Georgiev. All rights reserved.
-</footer>
+  <section id="contact" class="section">
+    <h2 id="contact-title">Contact</h2>
+    <p>📧 <a href="mailto:tanyanedyalkova99@gmail.com" style="color: white; text-decoration: underline;">tanyanedyalkova99@gmail.com</a></p>
+  </section>
 
+  <footer>
+    &copy; 2025 Phillip Georgiev. All rights reserved.
+  </footer>
+
+  <script>
+    const content = {
+      en: {
+        name: "Phillip Georgiev",
+		nav: ["About", "News", "Gallery", "Contact"],
+        about: `
+          <p>Born in 2013 in Sofia, Bulgaria, Phillip started playing tennis at an age of 4.</p>
+          <p>Between 2021 and June 2023, he was regularly training at the 
+            <a style="color: #ffffff;" href="https://maleeva.com/en/" target="_blank">Maleeva Tennis Club</a> in Sofia, Bulgaria.
+          </p>
+          <p>Since August 2023, he trains at the  
+            <a style="color: #ffffff;" href="https://rainerbecker-tennis.de/" target="_blank">Rainer Becker Academy</a> in Heidelberg, Germany.
+          </p>
+        `,
+        newsTitle: "News",
+        newsList: [
+          "June 2025 – Attended high-performance tennis camp at Rafa Nadal Academy, Spain",
+          "Nov 2024 – Visited Masters 1000 in Paris",
+          "Sept 2024 – Laver Cup, Berlin",
+          "July 2024 – ATP 500, Hamburg",
+          "Oct 2023 – ATP 500, Basel",
+          "Oct 2022 – Sofia Open",
+          "Oct 2018 – ATP 500, Vienna",
+        ],
+        galleryTitle: "Gallery",
+        contactTitle: "Contact"
+      },
+      de: {
+        name: "Phillip Georgiev",
+		nav: ["Über Phillip", "Neuigkeiten", "Galerie", "Kontakt"],
+        about: `
+          <p>Phillip wurde 2013 in Sofia, Bulgarien, geboren und begann im Alter von 4 Jahren mit dem Tennisspielen.</p>
+          <p>Zwischen 2021 und Juni 2023 trainierte er regelmäßig an der  
+            <a style="color: #ffffff;" href="https://maleeva.com/en/" target="_blank">Maleeva Tennisclub</a> in Sofia.
+          </p>
+          <p>Seit August 2023 trainiert er an der  
+            <a style="color: #ffffff;" href="https://rainerbecker-tennis.de/" target="_blank">Rainer Becker Academy</a> in Heidelberg, Deutschland.
+          </p>
+        `,
+        newsTitle: "Neuigkeiten",
+        newsList: [
+          "Juni 2025 – Tenniscamp bei Rafa Nadal Academy, Spanien",
+          "Nov 2024 – Masters 1000 in Paris",
+          "Sept 2024 – Laver Cup, Berlin",
+          "Juli 2024 – ATP 500, Hamburg",
+          "Okt 2023 – ATP 500, Basel",
+          "Okt 2022 – Sofia Open",
+          "Okt 2018 – ATP 500, Wien",
+        ],
+        galleryTitle: "Galerie",
+        contactTitle: "Kontakt"
+      },
+      bg: {
+		name: "Филип Георгиев",
+        nav: ["За Филип", "Новини", "Галерия", "Контакт"],
+        about: `
+          <p>Филип е роден през 2013 г. в София и започва да играе тенис на 4-годишна възраст.</p>
+          <p>От 2021 до юни 2023 г. тренира редовно в  
+            <a style="color: #ffffff;" href="https://maleeva.com/en/" target="_blank">тенис клуб Малееви</a> в София.
+          </p>
+          <p>От август 2023 г. тренира в  
+            <a style="color: #ffffff;" href="https://rainerbecker-tennis.de/" target="_blank">Академия Rainer Becker</a> в Хайделберг, Германия.
+          </p>
+        `,
+        newsTitle: "Новини",
+        newsList: [
+          "Юни 2025 – Едноседмичен интензивен тренировъчен лагер в Rafa Nadal Academy, Майорка, Испания",
+          "Ноември 2024 – Мастърс 1000, Париж",
+          "Септември 2024 – Laver Cup, Берлин",
+          "Юли 2024 – ATP 500, Хамбург",
+          "Октомври 2023 – ATP 500, Базел",
+          "Октомври 2022 – Sofia Open",
+          "Октомври 2018 – ATP 500, Виена",
+        ],
+        galleryTitle: "Галерия",
+        contactTitle: "Контакт"
+      }
+    };
+
+    function setLanguage(lang) {
+      const data = content[lang] || content.en;
+	  document.getElementById("name").textContent = data.name;
+      document.getElementById("nav-about").textContent = data.nav[0];
+      document.getElementById("nav-news").textContent = data.nav[1];
+      document.getElementById("nav-gallery").textContent = data.nav[2];
+      document.getElementById("nav-contact").textContent = data.nav[3];
+      document.getElementById("about-text").innerHTML = data.about;
+      document.getElementById("news-title").textContent = data.newsTitle;
+      document.getElementById("gallery-title").textContent = data.galleryTitle;
+      document.getElementById("contact-title").textContent = data.contactTitle;
+
+      const newsList = document.getElementById("news-list");
+      newsList.innerHTML = "";
+      data.newsList.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        newsList.appendChild(li);
+      });
+    }
+
+    const browserLang = navigator.language.slice(0, 2);
+    if (browserLang === "bg") setLanguage("bg");
+    else if (browserLang === "de") setLanguage("de");
+    else setLanguage("en");
+  </script>
 </body>
 </html>
